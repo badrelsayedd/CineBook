@@ -11,7 +11,7 @@ namespace CineBook.Models
     {
         public int Id { get; set; }
 
-        public string UserId { get; set; }
+        public string UserId { get; set; } = string.Empty;
         public   ApplicationUser User { get; set; } = null!;
 
         public int MovieId { get; set; }

@@ -16,6 +16,9 @@ namespace CineBook.Models
         public int SeatId { get; set; }
         public Seat Seat { get; set; } = null!;
 
+        public int ShowTimeId { get; set; }
+        public ShowTime ShowTime { get; set; } = null!;
+
         public decimal PriceAtBooking { get; set; }
     }
 }

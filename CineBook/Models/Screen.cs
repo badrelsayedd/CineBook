@@ -13,6 +13,10 @@ namespace CineBook.Models
         public bool IsActive { get; set; } = true;
 
 
+        public ICollection<Seat> Seats { get; set; } = new List<Seat>();
+        public ICollection<ShowTime> ShowTimes { get; set; } = new List<ShowTime>();
+
+
 
     }
 }

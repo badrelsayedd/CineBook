@@ -26,6 +26,7 @@ namespace CineBook.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        public ICollection<BookingSeat> BookingSeats { get; set; } = new List<BookingSeat>();
 
     }
 }
