@@ -1,6 +1,10 @@
-﻿namespace CineBook.Data
+﻿using CineBook.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace CineBook.Data
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
     }
 }
