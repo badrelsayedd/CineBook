@@ -153,6 +153,12 @@ namespace CineBook.Data
                 e.HasIndex(x => x.Name).IsUnique();
                 e.ToTable(x => x.HasCheckConstraint("CK_SeatType_PriceMultiplier", "[PriceMultiplier] >= 0"));
 
+                // Seed
+                e.HasData(
+                    new SeatType { Id = 1, Name = "Standard", PriceMultiplier = 1.0m },
+                    new SeatType { Id = 2, Name = "VIP", PriceMultiplier = 1.5m }
+                );
+
             });
 
             // Seat Constraints and Relationship with Screen and SeatType
@@ -273,6 +279,24 @@ namespace CineBook.Data
 
                 e.ToTable(t => t.HasCheckConstraint("CK_Review_Rating", "[Rating] BETWEEN 1 AND 5"));
             });
+
+            // Seed: Roles
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Id = "a1b2c3d4-0000-0000-0000-000000000001",
+                    Name = "Admin",
+                    NormalizedName = "ADMIN",
+                    ConcurrencyStamp = "role-admin-stamp"
+                },
+                new IdentityRole
+                {
+                    Id = "a1b2c3d4-0000-0000-0000-000000000002",
+                    Name = "User",
+                    NormalizedName = "USER",
+                    ConcurrencyStamp = "role-user-stamp"
+                }
+            );
         }
     }
 }
